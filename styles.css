@@ -442,9 +442,10 @@ html {
 }
 
 .certification-icon {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     border-radius: 12px;
+    background: linear-gradient(135deg, rgba(0, 180, 216, 0.2), rgba(123, 44, 191, 0.2));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -465,7 +466,7 @@ html {
     border-radius: 12px;
     background: rgba(0, 180, 216, 0.05);
     border: 2px solid rgba(0, 180, 216, 0.2);
-    min-width: 150px;
+    min-width: 100px;
 }
 
 .contact-item:hover {
