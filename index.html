@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio profesional de Jorge Luis Sandoval Urenda - Estudiante de Tecnologías de la Información">
+    <meta name="author" content="Jorge Luis Sandoval Urenda">
+    <title>Jorge Luis Sandoval Urenda | Developer Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'electric-blue': '#00B4D8',
+                        'electric-purple': '#7B2CBF',
+                        'deep-blue': '#0077BE',
+                        'deep-purple': '#5A189A'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#home" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-electric-blue focus:text-white focus:rounded" data-i18n="skip-link">Saltar al contenido principal</a>
+    
+    <!-- Animated Background -->
+    <div class="animated-background" aria-hidden="true"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-40 bg-gray-900/80 backdrop-blur-md border-b border-electric-blue/30">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#home" class="text-2xl font-bold bg-gradient-to-r from-electric-blue to-electric-purple bg-clip-text text-transparent">
+                    JS
+                </a>
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="#home" class="nav-link" data-i18n="nav-home">Inicio</a></li>
+                    <li><a href="#about" class="nav-link" data-i18n="nav-about">Acerca de</a></li>
+                    <li><a href="#skills" class="nav-link" data-i18n="nav-skills">Habilidades</a></li>
+                    <li><a href="#projects" class="nav-link" data-i18n="nav-projects">Proyectos</a></li>
+                    <li><a href="#certifications" class="nav-link" data-i18n="nav-certifications">Certificaciones</a></li>
+                    <li><a href="#contact" class="nav-link" data-i18n="nav-contact">Contacto</a></li>
+                </ul>
+                <div class="flex items-center gap-4">
+                    <!-- Language Switcher -->
+                    <div class="hidden md:flex gap-2" role="group" aria-label="Language selector">
+                        <button id="lang-es" class="lang-btn active" data-lang="es" title="Español" aria-label="Español" aria-pressed="true">
+                            <span class="text-sm font-semibold">ES</span>
+                        </button>
+                        <button id="lang-en" class="lang-btn" data-lang="en" title="English" aria-label="English" aria-pressed="false">
+                            <span class="text-sm font-semibold">GB</span>
+                        </button>
+                        <button id="lang-fr" class="lang-btn" data-lang="fr" title="Français" aria-label="Français" aria-pressed="false">
+                            <span class="text-sm font-semibold">FR</span>
+                        </button>
+                    </div>
+                    <button id="mobile-menu-btn" class="md:hidden text-electric-blue">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/95 border-t border-electric-blue/30">
+            <ul class="px-6 py-4 space-y-4">
+                <li><a href="#home" class="block nav-link" data-i18n="nav-home">Inicio</a></li>
+                <li><a href="#about" class="block nav-link" data-i18n="nav-about">Acerca de</a></li>
+                <li><a href="#skills" class="block nav-link" data-i18n="nav-skills">Habilidades</a></li>
+                <li><a href="#projects" class="block nav-link" data-i18n="nav-projects">Proyectos</a></li>
+                <li><a href="#certifications" class="block nav-link" data-i18n="nav-certifications">Certificaciones</a></li>
+                <li><a href="#contact" class="block nav-link" data-i18n="nav-contact">Contacto</a></li>
+            </ul>
+            <!-- Language Switcher for Mobile -->
+            <div class="px-6 py-4 border-t border-electric-blue/30 flex gap-2 justify-center" role="group" aria-label="Language selector">
+                <button id="lang-es-mobile" class="lang-btn active" data-lang="es" title="Español" aria-label="Español" aria-pressed="true">
+                    <span class="text-sm font-semibold">ES</span>
+                </button>
+                <button id="lang-en-mobile" class="lang-btn" data-lang="en" title="English" aria-label="English" aria-pressed="false">
+                    <span class="text-sm font-semibold">GB</span>
+                </button>
+                <button id="lang-fr-mobile" class="lang-btn" data-lang="fr" title="Français" aria-label="Français" aria-pressed="false">
+                    <span class="text-sm font-semibold">FR</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
+        <div class="container mx-auto px-6 py-20">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="flex-shrink-0">
+                    <div class="profile-photo-container">
+                        <img src="assets/personal_photo.jpeg" alt="Jorge Luis Sandoval Urenda" class="profile-photo">
+                        <div class="profile-glow"></div>
+                    </div>
+                </div>
+                <div class="text-center md:text-left flex-1">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-4">
+                        <span class="bg-gradient-to-r from-electric-blue to-electric-purple bg-clip-text text-transparent" data-i18n="home-name">
+                            Jorge Luis Sandoval Urenda
+                        </span>
+                    </h1>
+                    <p class="text-2xl md:text-3xl text-gray-300 mb-4" data-i18n="home-title">
+                        Estudiante de Tecnologías de la Información
+                    </p>
+                    <p class="text-xl md:text-2xl text-gray-400 mb-6">
+                        Desarrollador enfocado en POO y Linux
+                    </p>
+                    <p class="text-xl text-electric-blue mb-8">
+                        <i class="fas fa-envelope mr-2"></i>
+                        <a href="mailto:jorgluisu@hotmail.com" class="hover:text-electric-purple transition-colors">
+                            jorgluisu@hotmail.com
+                        </a>
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                        <a href="#projects" class="btn-primary" data-i18n="home-view-projects">
+                            Ver Proyectos
+                        </a>
+                        <a href="assets/cv.pdf" download class="btn-secondary" data-i18n="home-download-cv">
+                            <i class="fas fa-download mr-2"></i>
+                            Descargar CV
+                        </a>
+                    </div>
+                    <div class="mt-8 flex gap-6 justify-center md:justify-start">
+                        <a href="https://github.com/Penya123" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jorge-luis-sandoval-urenda-b4a33138a" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:jorgluisu@hotmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">
+                <span class="bg-gradient-to-r from-electric-blue to-electric-purple bg-clip-text text-transparent" data-i18n="about-title">
+                    Acerca de Mí
+                </span>
+            </h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-electric-blue/30 shadow-lg">
+                    <p class="text-lg leading-relaxed mb-6" data-i18n="about-description-1">
+                        Soy Jorge Luis Sandoval Urenda, estudiante apasionado de Tecnologías de la Información con un enfoque 
+                        especializado en desarrollo de software. Mi experiencia académica me ha permitido adquirir sólidos 
+                        conocimientos en programación, bases de datos, y arquitectura de sistemas.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-6" data-i18n="about-description-2">
+                        Mi desarrollo profesional se centra principalmente en dos áreas fundamentales: <strong>Programación Orientada a Objetos (POO)</strong> 
+                        y el sistema operativo <strong>Linux</strong>. Tengo una especial afinidad y destreza con los algoritmos y la POO, 
+                        lo que me permite diseñar soluciones eficientes y bien estructuradas. Mi conocimiento en Linux me permite 
+                        trabajar en entornos robustos y desarrollar aplicaciones que aprovechan al máximo las capacidades del sistema.
+                    </p>
+                    <p class="text-lg leading-relaxed" data-i18n="about-description-3">
+                        Estoy constantemente aprendiendo nuevas tecnologías y mejorando mis habilidades para mantenerme 
+                        actualizado con las últimas tendencias en el desarrollo de software. Mi enfoque se centra en escribir 
+                        código limpio, eficiente y mantenible, aplicando los principios de la POO y las mejores prácticas en entornos Linux.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">
+                <span class="bg-gradient-to-r from-electric-blue to-electric-purple bg-clip-text text-transparent" data-i18n="skills-title">
+                    Habilidades Técnicas
+                </span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <!-- Frontend -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-3xl font-semibold mb-6" data-i18n="skills-frontend">Frontend</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-lg">
+                            <i class="fab fa-html5 text-orange-500 mr-3 text-2xl"></i>
+                            <span>HTML5</span>
+                        </li>
+                        <li class="flex items-center text-lg">
+                            <i class="fab fa-css3-alt text-blue-500 mr-3 text-2xl"></i>
+                            <span>CSS3</span>
+                        </li>
+                        <li class="flex items-center text-lg">
+                            <i class="fab fa-js text-yellow-500 mr-3 text-2xl"></i>
+                            <span>JavaScript</span>
+                        </li>
+                        <li class="flex items-center text-lg">
+                            <i class="fab fa-react text-cyan-400 mr-3 text-2xl"></i>
+                            <span>React</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Backend -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-3xl font-semibold mb-6" data-i18n="skills-backend">Backend</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-lg">
+                            <i class="fab fa-node-js text-green-500 mr-3 text-2xl"></i>
+                            <span>Node.js</span>
+                        </li>
+                        <li class="flex items-center text-lg">
+                            <i class="fab fa-java text-orange-500 mr-3 text-2xl"></i>
+                            <span>Java</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Databases -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="text-3xl font-semibold mb-6" data-i18n="skills-databases">Bases de Datos</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-lg">
+                            <i class="fas fa-database text-blue-500 mr-3 text-2xl"></i>
+                            <span>MySQL</span>
+                        </li>
+                        <li class="flex items-center text-lg">
+                            <i class="fas fa-database text-blue-400 mr-3 text-2xl"></i>
+                            <span>SQLite</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Tools & Technologies -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-3xl font-semibold mb-6" data-i18n="skills-tools">Herramientas</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-lg">
+                            <i class="fab fa-git-alt text-orange-600 mr-3 text-2xl"></i>
+                            <span>Git</span>
+                        </li>
+                        <li class="flex items-center text-lg">
+                            <i class="fab fa-github text-white mr-3 text-2xl"></i>
+                            <span>GitHub</span>
+                        </li>
+                        <li class="flex items-center text-lg">
+                            <i class="fas fa-cloud text-blue-400 mr-3 text-2xl"></i>
+                            <span>Docker</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Mobile Development -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-3xl font-semibold mb-6" data-i18n="skills-mobile">Móvil</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-lg">
+                            <i class="fab fa-java text-orange-500 mr-3 text-2xl"></i>
+                            <span>Java (Android)</span>
+                        </li>
+                        <li class="flex items-center text-lg">
+                            <svg class="kotlin-icon mr-3" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 2L12 12L2 22H7L17 12L7 2H2Z" fill="#7F52FF"/>
+                                <path d="M7 2L17 12L7 22H12L22 12L12 2H7Z" fill="#B180FF"/>
+                            </svg>
+                            <span>Kotlin (Android)</span>
+                        </li>
+                        <li class="flex items-center text-lg">
+                            <svg class="swift-icon mr-3" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21.984 0C21.984 0 17.556 2.544 14.664 3.912c-.96.432-1.656.72-1.656.72s3.36-2.088 6.792-3.816C18.144.36 17.424.12 17.424.12c.024.024.744.264 1.464.648L21.984 0zM1.896 6.72C-.072 8.424-.696 10.248.336 11.784c.36.624.888 1.152 1.56 1.488.048.024.096.048.144.072-.36-.24-.696-.528-.984-.864-.912-1.08-.984-2.424-.216-3.744.768-1.32 2.304-2.208 2.304-2.208L1.896 6.72zm20.184 2.088c.504.504.816 1.2.672 1.968-.048.24-.144.48-.288.696.432-.144.84-.36 1.176-.648.768-.648 1.056-1.68.624-2.664-.432-.984-1.296-1.656-2.352-1.848.408.504.696 1.104.744 1.752a2.776 2.776 0 0 1-.144 1.296h.024zm-1.104 3.12c-2.472 1.728-5.784 4.368-7.824 6.024-1.968 1.584-3.144 2.592-4.248 3.936-.96 1.152-1.824 2.568-2.328 4.2-.24.768-.336 1.584-.312 2.376.024.792.12 1.56.336 2.28.216.72.528 1.392.936 1.992.408.6.888 1.128 1.44 1.56.552.432 1.152.768 1.8.984.648.216 1.32.312 2.016.288.696-.024 1.368-.168 2.016-.408.648-.24 1.248-.576 1.8-.984-.456-.576-.768-1.224-.912-1.896-.144-.672-.12-1.368.072-2.04.384-1.344 1.32-2.496 2.304-3.528 1.968-2.064 4.536-3.984 7.056-5.856 1.248-.936 2.472-1.872 3.648-2.856.6-.504 1.176-1.032 1.728-1.584-1.632.216-3.24.624-4.776 1.2zm-17.448.384c.768-.504 1.632-.912 2.544-1.224.912-.312 1.872-.528 2.856-.648.984-.12 1.992-.144 3-.072.048 0 .096 0 .144.024-.624-.168-1.272-.288-1.944-.36-1.344-.144-2.712-.12-4.032.072-1.32.192-2.592.552-3.768 1.056-.048 0-.096-.024-.144-.024-.096-.048-.192-.096-.288-.144a11.283 11.283 0 0 0-.384-.072zm16.416 3.144c-1.824 1.32-3.744 2.664-5.448 4.176-.84.744-1.632 1.536-2.376 2.376-.744.84-1.44 1.728-2.064 2.664-.312.468-.6.96-.864 1.464-.264.504-.504 1.032-.72 1.56.48-.888 1.08-1.728 1.728-2.52 1.296-1.584 3.048-2.976 4.896-4.2 1.848-1.224 3.792-2.28 5.808-3.168.048-.024.096-.024.144-.048-.48.432-.96.888-1.416 1.344-.456.456-.888.936-1.296 1.44-.024 0-.024.024-.048.024z" fill="#F05138"/>
+                            </svg>
+                            <span>Swift (iOS)</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Data Structures -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3 class="text-3xl font-semibold mb-6">Estructura de Datos</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-lg">
+                            <i class="fas fa-code text-blue-400 mr-3 text-2xl"></i>
+                            <span>C</span>
+                        </li>
+                        <li class="flex items-center text-lg">
+                            <i class="fas fa-code text-blue-500 mr-3 text-2xl"></i>
+                            <span>C++</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Additional Skills -->
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="text-3xl font-semibold mb-6">Otros Conocimientos</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-lg">
+                            <i class="fab fa-linux text-orange-400 mr-3 text-2xl"></i>
+                            <span>Linux</span>
+                        </li>
+                        <li class="flex items-center text-lg">
+                            <i class="fas fa-language text-blue-400 mr-3 text-2xl"></i>
+                            <span>Inglés B1</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">
+                <span class="bg-gradient-to-r from-electric-blue to-electric-purple bg-clip-text text-transparent" data-i18n="projects-title">
+                    Proyectos
+                </span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto">
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image-container project-filter-blue">
+                        <img src="assets/proyect-survey.jpg" alt="Encuestas de Satisfacción de Cine" class="project-image project-image-filter-1" onerror="this.onerror=null; this.src='assets/project3-placeholder.svg';">
+                        <div class="project-overlay">
+                            <a href="https://github.com/AngelPwG/satisfaction-survey-cinema" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="text-2xl font-semibold mb-3">
+                            Encuestas de Satisfacción de Cine
+                        </h3>
+                        <p class="text-gray-300 mb-4">
+                            Aplicación Android desarrollada en colaboración para automatizar el proceso de encuestas de satisfacción 
+                            de clientes en un cine. La aplicación utiliza SQLite para el almacenamiento local de resultados y permite 
+                            visualizar estadísticas básicas de las encuestas realizadas, reemplazando el proceso manual por una solución digital eficiente.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">Android</span>
+                            <span class="tech-tag">SQLite</span>
+                        </div>
+                        <a href="https://github.com/AngelPwG/satisfaction-survey-cinema" target="_blank" rel="noopener noreferrer" class="project-demo-btn">
+                            <i class="fab fa-github mr-2"></i>
+                            Ver en GitHub
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-image-container project-filter-purple">
+                        <img src="assets/proyecto-campaigns.png" alt="Gestor de Campañas de Rol" class="project-image project-image-filter-2" onerror="this.onerror=null; this.src='assets/project4-placeholder.svg';">
+                        <div class="project-overlay">
+                            <a href="https://gitlab.com/proyectointegradorgestor/proyectofinalpoo.git" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-gitlab"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="text-2xl font-semibold mb-3">
+                            Gestor de Campañas de Rol
+                        </h3>
+                        <p class="text-gray-300 mb-4">
+                            Proyecto final de la materia de Programación Orientada a Objetos (POO). Sistema completo para gestionar 
+                            campañas de rol, desarrollado aplicando los principios fundamentales de POO como encapsulación, herencia, 
+                            polimorfismo y abstracción. Permite crear, organizar y administrar campañas de juegos de rol con todas sus 
+                            características y elementos.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">POO</span>
+                            <span class="tech-tag">Algoritmos</span>
+                        </div>
+                        <a href="https://gitlab.com/proyectointegradorgestor/proyectofinalpoo.git" target="_blank" rel="noopener noreferrer" class="project-demo-btn">
+                            <i class="fab fa-gitlab mr-2"></i>
+                            Ver en GitLab
+                        </a>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-image-container project-filter-purple">
+                        <img src="assets/project-rpg.png" alt="Juego rpg creado en Java" class="project-image project-image-filter-2" onerror="this.onerror=null; this.src='assets/project4-placeholder.svg';">
+                        <div class="project-overlay">
+                            <a href="https://gitlab.com/proyectointegradorgestor/proyectofinalpoo.git" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="text-2xl font-semibold mb-3">
+                            Juego RPG creado en Java
+                        </h3>
+                        <p class="text-gray-300 mb-4">
+                            Pequeña demostración de un juego de rol creado en Java, aplicando los principios de la POO y usando solamente sus librerías.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">POO</span>
+                        </div>
+                        <a href="https://gitlab.com/proyectointegradorgestor/proyectofinalpoo.git" target="_blank" rel="noopener noreferrer" class="project-demo-btn">
+                            <i class="fab fa-gitlab mr-2"></i>
+                            Ver en GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">
+                <span class="bg-gradient-to-r from-electric-blue to-electric-purple bg-clip-text text-transparent" data-i18n="certifications-title">
+                    Certificaciones y Logros
+                </span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2" data-i18n="cert1-title">
+                        Certificación en Desarrollo Web
+                    </h3>
+                    <p class="text-gray-400 text-sm mb-2" data-i18n="cert1-org">
+                        Institución Académica
+                    </p>
+                    <p class="text-gray-300" data-i18n="cert1-year">2024</p>
+                </div>
+                
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2" data-i18n="cert2-title">
+                        Premio a la Excelencia Académica
+                    </h3>
+                    <p class="text-gray-400 text-sm mb-2" data-i18n="cert2-org">
+                        Universidad
+                    </p>
+                    <p class="text-gray-300" data-i18n="cert2-year">2023</p>
+                </div>
+                
+                <div class="certification-card">
+                    <div class="certification-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2" data-i18n="cert3-title">
+                        Google Cloud Fundamentals
+                    </h3>
+                    <p class="text-gray-400 text-sm mb-2" data-i18n="cert3-org">
+                        Google Cloud Platform
+                    </p>
+                    <p class="text-gray-300" data-i18n="cert3-year">2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">
+                <span class="bg-gradient-to-r from-electric-blue to-electric-purple bg-clip-text text-transparent" data-i18n="contact-title">
+                    Contacto
+                </span>
+            </h2>
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-electric-blue/30 shadow-lg">
+                    <p class="text-center text-lg mb-8" data-i18n="contact-description">
+                        ¿Interesado en colaborar o tienes alguna pregunta? No dudes en contactarme.
+                    </p>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
+                        <a href="mailto:jorgluisu@hotmail.com" class="contact-item">
+                            <i class="fas fa-envelope text-electric-blue text-2xl mb-2"></i>
+                            <span>jorgluisu@hotmail.com</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jorge-luis-sandoval-urenda-b4a33138a" target="_blank" rel="noopener noreferrer" class="contact-item">
+                            <i class="fab fa-linkedin text-electric-blue text-2xl mb-2"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/Penya123" target="_blank" rel="noopener noreferrer" class="contact-item">
+                            <i class="fab fa-github text-electric-blue text-2xl mb-2"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                    <div class="text-center">
+                        <a href="assets/cv.pdf" download class="btn-primary inline-block" data-i18n="contact-download-cv">
+                            <i class="fas fa-download mr-2"></i>
+                            Descargar CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-8 border-t border-electric-blue/30 relative">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400" data-i18n="footer-text">
+                © 2024 Jorge Luis Sandoval Urenda. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,15 @@
+CV PDF File Instructions
+========================
+
+Please add your CV/resume PDF file to this folder with the filename: cv.pdf
+
+The file should be:
+- In PDF format (.pdf)
+- Optimized for web (recommended size: < 2MB)
+- Up-to-date with your latest information
+- Professional and well-formatted
+
+The website will automatically link to this file for downloads when visitors click the "Download CV" buttons.
+
+Note: If the CV file is not present, the download link will still work but the browser may show an error. Make sure to add your actual CV PDF file before deploying the website.
+
